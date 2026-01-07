@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Waste Segregation Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+    }
+    header {
+      background: #2c7a7b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 5px 5px 5px 0;
+      background: #2c7a7b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      background: #285e61;
+    }
+    .hidden {
+      display: none;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .image-box {
+      border: 2px dashed #999;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #1a202c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body><header>
+  <h1>E-Waste Segregation System</h1>
+  <p>College Mini Project</p>
+</header><div class="container">  <!-- Starting Modes -->  <div class="card">
+    <h2>Select Item Condition</h2>
+    <button class="btn" onclick="showWorking()">Working</button>
+    <button class="btn" onclick="showNonWorking()">Non-Working</button>
+  </div>  <!-- Working Items -->  <div id="working" class="card hidden">
+    <h2>Working Items</h2>
+    <button class="btn" onclick="showInfo('Working Keyboard')">Keyboard</button>
+    <button class="btn" onclick="showInfo('Working Mouse')">Mouse</button>
+    <button class="btn" onclick="showInfo('Working Motherboard')">Motherboard</button>
+    <button class="btn" onclick="showInfo('Working RAM')">RAM</button>
+  </div>  <!-- Non Working Items -->  <div id="nonworking" class="card hidden">
+    <h2>Non-Working Items</h2>
+    <button class="btn" onclick="showInfo('Non-Working Keyboard')">Keyboard</button>
+    <button class="btn" onclick="showInfo('Non-Working Mouse')">Mouse</button>
+    <button class="btn" onclick="showInfo('Non-Working Motherboard')">Motherboard</button>
+    <button class="btn" onclick="showInfo('Non-Working RAM')">RAM</button>
+  </div>  <!-- Editable Information Section -->  <div id="info" class="card hidden">
+    <h2 id="infoTitle"></h2><label><strong>College Name</strong></label>
+<input type="text" placeholder="Enter college name">
+
+<label><strong>Location</strong></label>
+<input type="text" placeholder="Enter location">
+
+<label><strong>Upload / Paste Image</strong></label>
+<div class="image-box">Image Placeholder</div>
+
+<label><strong>Your Content</strong></label>
+<textarea placeholder="Write your information here..."></textarea>
+
+<button class="btn" onclick="saveData()">Save</button>
+
+  </div></div><footer>
+  <p>Developed by Team Eco Experts | E-Waste Project</p>
+</footer><script>
+  function showWorking() {
+    document.getElementById('working').classList.remove('hidden');
+    document.getElementById('nonworking').classList.add('hidden');
+    document.getElementById('info').classList.add('hidden');
+  }
+
+  function showNonWorking() {
+    document.getElementById('nonworking').classList.remove('hidden');
+    document.getElementById('working').classList.add('hidden');
+    document.getElementById('info').classList.add('hidden');
+  }
+
+  function showInfo(title) {
+    document.getElementById('infoTitle').innerText = title;
+    document.getElementById('info').classList.remove('hidden');
+  }
+
+  function saveData() {
+    alert('Your data has been saved (demo purpose).');
+  }
+</script></body>
+</html>
